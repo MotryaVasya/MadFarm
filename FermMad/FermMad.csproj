@@ -46,17 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="ChickenFerm.cs" />
     <Compile Include="CowFerm.cs" />
+=======
+    <Compile Include="Chicken.cs" />
+    <Compile Include="Cow.cs" />
+>>>>>>> Animalf
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="IFerm.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="PigFerm.cs" />
+=======
+    <Compile Include="IAnimal.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="Pig.cs" />
+>>>>>>> Animalf
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
