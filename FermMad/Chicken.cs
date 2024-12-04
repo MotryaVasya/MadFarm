@@ -26,4 +26,6 @@ namespace FermMad
         public int PriceBuy { get => _priceBuy; }
         public int PriceSell { get => _priceSell; }
     }
+
+
 }
