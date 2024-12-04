@@ -13,7 +13,7 @@ namespace FermMad
         public static Manager getInstance(int money, int corm, int min_count_corm)
         {
             if (instance == null)
-                instance = new Manager(model);
+                instance = new Manager(money, corm, min_count_corm);
             return instance;
         }
 
@@ -21,7 +21,7 @@ namespace FermMad
         static private int _money;
         static private int _corm;
         static private int _min_count_corm;
-
+        
         public Manager(int money, int corm, int min_count_corm)
         {
             Money = money;
