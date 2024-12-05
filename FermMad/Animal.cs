@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace FermMad
 {
-    
     public abstract class Animal
     {
         abstract public bool Health { get; }

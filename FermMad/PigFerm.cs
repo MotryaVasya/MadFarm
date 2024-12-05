@@ -9,24 +9,19 @@ namespace FermMad
     public class PigFerm : Ferm
     {
         private List<Pig> pigs;
-
         public override List<Animal> _animals => PigkToAnim();
-
-
         private int max_count_animals;
         public override int _max_count_animals => max_count_animals;
-
         public override string GetInfo()
         {
             return $"Вместимость загона: {_max_count_animals}";
         }
-
         private List<Animal> PigkToAnim()
         {
             List<Animal> animals = new List<Animal>();
-            foreach (var pigk in pigs)
+            foreach (var pig in pigs)
             {
-                animals.Add(pigk);
+                animals.Add(pig);
             }
             return animals;
         }
