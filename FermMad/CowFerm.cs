@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FermMad
 {
-    public class CowwFerm : IFerm
+    public class CowFerm : IFerm
     {
-        private List<IAnimal> _animals;
+        private List<Cow> _animals;
         private int _max_count_animals;
         public int max_count_animals => _max_count_animals;
 

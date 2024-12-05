@@ -8,10 +8,10 @@ namespace FermMad
 {
     public class PigFerm : IFerm
     {
-        private List<IAnimal> _animals;
+        private List<Pig> _pig;
         private int _max_count_animals;
         public int max_count_animals => _max_count_animals;
 
-        public List<IAnimal> animals { get => _animals; }
+        public List<IAnimal> animals { get => _pig; }
     }
 }

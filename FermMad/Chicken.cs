@@ -13,6 +13,7 @@ namespace FermMad
         private int _priceBuy;
         private int _priceSell;
 
+
         public Chicken(bool health, int eat, int priceBuy, int priceSell)
         {
             _health = health;
