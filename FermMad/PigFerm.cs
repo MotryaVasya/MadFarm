@@ -6,12 +6,29 @@ using System.Threading.Tasks;
 
 namespace FermMad
 {
-    public class PigFerm : IFerm
+    public class PigFerm : Ferm
     {
-        private List<Pig> _pig;
-        private int _max_count_animals;
-        public int max_count_animals => _max_count_animals;
+        private List<Pig> pigs;
 
-        public List<IAnimal> animals { get => _pig; }
+        public override List<Animal> _animals => PigkToAnim();
+
+
+        private int max_count_animals;
+        public override int _max_count_animals => max_count_animals;
+
+        public override string GetInfo()
+        {
+            return $"Вместимость загона: {_max_count_animals}";
+        }
+
+        private List<Animal> PigkToAnim()
+        {
+            List<Animal> animals = new List<Animal>();
+            foreach (var pigk in pigs)
+            {
+                animals.Add(pigk);
+            }
+            return animals;
+        }
     }
 }
