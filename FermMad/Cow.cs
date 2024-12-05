@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace FermMad
 {
-    public class Cow: IAnimal
+    public class Cow: Animal
     {
         private bool _health;
         private int _eat;
         private int _priceBuy;
         private int _priceSell;
 
-        public Cow(bool health, int eat, int priceBuy, int priceSell)
-        {
-            _health = health;
-            _eat = eat;
-            _priceBuy = priceBuy;
-            _priceSell = priceSell;
-        }
+        public override bool Health => _health;
 
-        public bool Health { get => _health; }
-        public int Eat { get => _eat; }
-        public int PriceBuy { get => _priceBuy; }
-        public int PriceSell { get => _priceSell; }
+        public override int Eat => _eat;
+
+        public override int PriceBuy => _priceBuy;
+
+        public override int PriceSell => _priceSell;
+
+        public override string GetInfo()
+        {
+            return $"Здоровье: {_health}\nПитание: {_eat}\nЦена покупки: {_priceBuy}\nЦена продажи: {_priceSell}\n";
+        }
     }
 }
