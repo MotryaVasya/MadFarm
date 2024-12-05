@@ -59,6 +59,7 @@
     <Compile Include="CowFerm.cs" />
     <Compile Include="Chicken.cs" />
     <Compile Include="Cow.cs" />
+    <Compile Include="Ferm.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
