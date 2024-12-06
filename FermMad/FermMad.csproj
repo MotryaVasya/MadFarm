@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuyElementsShop.cs" />
     <Compile Include="ChickenFerm.cs" />
     <Compile Include="CowFerm.cs" />
     <Compile Include="Chicken.cs" />

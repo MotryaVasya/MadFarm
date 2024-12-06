@@ -9,9 +9,20 @@ namespace FermMad
     public class ChickenFerm : Ferm
     {
         private List<Chicken> chickens;
-        public override List<Animal> _animals => ChickToAnim();
+        private int _priceFerm;
         private int max_count_animals;
+        
+        
+        public override int _priceFerm => PriceFerm;
+        public override List<Animal> _animals => ChickToAnim();
         public override int _max_count_animals => max_count_animals;
+
+        public ChickenFerm(int priceFrem,List<Animal> animals, int maxcountanimals)
+        {
+            PriceFrem = priceFrem;
+            _animals = animals;
+            _max_count_animals = maxcountanimals;
+        }
         public override string GetInfo()
         {
             return $"Вместимость загона: {_max_count_animals}";
