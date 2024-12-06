@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace FermMad
 {
-    class ViewModel : INotifyPropertyChanged
+    public class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        Model1 Model;
-        List<Ferm> _ferms;
-        List<Animal> _animals;
-        List<Player> _player_Progress;
+        readonly Model1 Model;
+        static public List<Ferm> _ferms;
+        static public List<Animal> _animals;
+        static public List<Player> _player_Progress;
         public List<Ferm> Ferms
         {
             get
@@ -57,5 +57,26 @@ namespace FermMad
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+        public static ButtonCommands BuyFerm
+        {
+            get
+            {
+                return new ButtonCommands(() =>
+                {
+                    BuyElementsShop.BuyFerm(0);// вместо 0 поставить listBox.SelectedIndex
+                });
+            }
+        }
+        public static ButtonCommands BuyAnimal
+        {
+            get
+            {
+                return new ButtonCommands(() =>
+                {
+                    BuyElementsShop.BuyAnimal(0);// вместо 0 поставить listBox2.SelectedIndex
+                });
+            }
+        }
+
     }
 }

@@ -24,14 +24,5 @@ namespace FermMad
         {
             _action();
         }
-        public ButtonCommands BuyFerm()
-        {
-            return new ButtonCommands(() => 
-            {
-                // сделать покупку 
-            });
-        }
-        
-
     }
 }
