@@ -53,11 +53,10 @@ namespace FermMad
         }
 
 
-        public PigFerm(int priceFrem, List<Pig> pigs, int maxcountanimals)
+        public PigFerm(int priceFrem, List<Pig> pigs)
         {
             PriceFerm = priceFrem;
             Pigs = pigs;
-            MaxCountAnimals = maxcountanimals;
         }
         public static List<Pig> Pigs { get => _pigs; set => _pigs = value; }
         public static List<Animal> PigToAnim(List<Pig> pigs)

@@ -53,11 +53,10 @@ namespace FermMad
         }
 
 
-        public ChickenFerm(int priceFrem, List<Chicken> chickens, int maxcountanimals)
+        public ChickenFerm(int priceFrem, List<Chicken> chickens)
         {
             PriceFerm = priceFrem;
             Animals = ChickToAnim(chickens);
-            MaxCountAnimals = maxcountanimals;
         }
         public static List<Chicken> Chickens { get => _chickens; set => _chickens = value; }
         public static List<Animal> ChickToAnim(List<Chicken> chickens)
