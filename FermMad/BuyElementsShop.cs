@@ -18,7 +18,7 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
                         Player.Money -= CheckMoneyBuyFerm(_ferms);
-                        _ferms.Add(new ChickenFerm(35, new List<Chicken>(), 3));
+                        _ferms.Add(new ChickenFerm(35, new List<Chicken>()));
                     }
                     break;
 
@@ -26,7 +26,7 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
                         Player.Money -= CheckMoneyBuyFerm(_ferms);
-                        _ferms.Add(new PigFerm(35, new List<Pig>(), 3));
+                        _ferms.Add(new PigFerm(35, new List<Pig>()));
                     }
                     break;
 
@@ -34,7 +34,7 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
                         Player.Money -= CheckMoneyBuyFerm(_ferms);
-                        _ferms.Add(new CowFerm(35, new List<Cow>(), 3));
+                        _ferms.Add(new CowFerm(35, new List<Cow>()));
                     }
                     break;
             }
