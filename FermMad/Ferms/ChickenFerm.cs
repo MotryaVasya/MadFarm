@@ -10,7 +10,7 @@ namespace FermMad
     {
         private static List<Chicken> _chickens;
         private int _priceFerm;
-        private int _maxCountAnimals;
+        private static int _maxCountAnimals;
 
 
         public List<Animal> Animals

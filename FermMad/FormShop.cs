@@ -17,52 +17,88 @@ namespace FermMad
         public FormShop()
         {
             InitializeComponent();
-            listBox1.Items.Add[0];
-            listBox1.Items.Add[1];
-            listBox1.Items.Add[2];
-           
-        }
-        private void FormShop_Load(object sender, EventArgs e)
-        {
-            ShopElements(textBox1.Text);
-            ShopElements(listBox2.Text);
+            listBox1.Items.Add("Постройки");
+            listBox1.Items.Add("Животные");
+            listBox1.Items.Add("Корма");
         }
 
-        private void ShopElements(string Text)
+
+        private void CheckClickElementFromListBox(string Text)
         {
-            switch(Text)
+            switch (Text)
             {
+                #region Все записи
                 case "Постройки":
+                    listBox2.Items.Clear();
                     listBox2.Items.Add("Ферма коров");
                     listBox2.Items.Add("Ферма свиней");
                     listBox2.Items.Add("Ферма куриц");
-                    listBox2.Items.Clear();
                     break;
                 case "Животные":
+                    listBox2.Items.Clear();
                     listBox2.Items.Add("Курицы");
                     listBox2.Items.Add("Свиньи");
                     listBox2.Items.Add("Коровы");
-                    listBox2.Items.Clear();
                     break;
-                case "Корм":
+                case "Корма":
+                    listBox2.Items.Clear();
                     listBox2.Items.Add("Корм");
-                    listBox2.Items.Clear();
                     break;
-                case "ПокупкаФермы":
-                    ViewModel.BuyFerm.GetType(BuyElementsShop.BuyFerm(listBox2.SelectedIndex));
+                #endregion
+
+                #region Фермы
+                case "Ферма коров":
+                    textBox1.Clear();
+                    //ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
                     break;
-                case "ПокупкаЖивотных":
-                    ViewModel._ferms.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex));
+                case "Ферма свиней":
+                    textBox1.Clear();
+                    //ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
                     break;
-                case "ПокупкаКорма":
-                    ViewModel.BuyCorm.ToString(BuyElementsShop.BuyCorm(listBox2.SelectedIndex));
+                case "Ферма куриц":
+                    textBox1.Clear();
+                    //ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
                     break;
+                #endregion
+                
+                #region Животные
+                case "Курицы":
+                    //ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
+                    break;
+                case "Свиньи":
+                    //ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
+                    break;
+                case "Коровы":
+                    //ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
+                    break;
+                #endregion
+                
+                #region Корм
+                case "Корм":
+                    //ViewModel.BuyCorm.ToString(BuyElementsShop.BuyCorm(listBox2.SelectedIndex));
+                    break;
+                #endregion
             }
+            if (listBox2.Items.Count > 0)
+            {
+                SetPositionForListBox2(listBox2);
+                Controls.Add(listBox2);
+            }
+            if (textBox1.Text.Length > 0)
+            {
+                Controls.Add(textBox1);
+            }
+        }
+
+        private void SetPositionForListBox2(ListBox listBox2)
+        {
+            listBox2.Left = listBox1.Right + 1;
+            listBox2.Top = listBox1.Top;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            CheckClickElementFromListBox(listBox1.SelectedItem.ToString());
         }
     }
 }

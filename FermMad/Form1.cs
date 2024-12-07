@@ -44,5 +44,11 @@ namespace FermMad
         {
 
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+           FormShop formShop = new FormShop();
+           formShop.ShowDialog();
+        }
     }
 }

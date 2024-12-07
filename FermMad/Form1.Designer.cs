@@ -57,7 +57,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(328, 9);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(176, 26);
             this.progressBar1.TabIndex = 1;
@@ -80,6 +80,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(102, 77);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // pictureBox2
             // 
@@ -107,7 +108,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Farm Game";
             this.Load += new System.EventHandler(this.Form1_Load_1);

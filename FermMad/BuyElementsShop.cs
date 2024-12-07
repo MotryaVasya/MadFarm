@@ -10,7 +10,8 @@ namespace FermMad
 {
     public class BuyElementsShop : ViewModel
     {
-        public static void BuyFerm(int index)
+        private static Ferm ferm;
+        public static Ferm BuyFerm(int index)
         {
             switch (index)
             {
@@ -18,7 +19,7 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
                         Player.Money -= CheckMoneyBuyFerm(_ferms);
-                        _ferms.Add(new ChickenFerm(35, new List<Chicken>()));
+                        ferm = (new ChickenFerm(35, new List<Chicken>()));
                     }
                     break;
 
@@ -26,7 +27,7 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
                         Player.Money -= CheckMoneyBuyFerm(_ferms);
-                        _ferms.Add(new PigFerm(35, new List<Pig>()));
+                        ferm = (new PigFerm(35, new List<Pig>()));
                     }
                     break;
 
@@ -34,12 +35,15 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
                         Player.Money -= CheckMoneyBuyFerm(_ferms);
-                        _ferms.Add(new CowFerm(35, new List<Cow>()));
+                        ferm = (new CowFerm(35, new List<Cow>()));
                     }
                     break;
             }
+            return ferm;
         }
-        public static void BuyAnimal(int index)
+
+        private static Animal animal;
+        public static Animal BuyAnimal(int index)
         {
             switch (index)
             {
@@ -47,7 +51,7 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 1))) >= 0)
                     {
                         Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 1));
-                        _animals.Add(new Chicken());
+                        animal = (new Chicken());
                     }
                     break;
 
@@ -55,7 +59,7 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 2))) >= 0)
                     {
                         Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 2));
-                        _animals.Add(new Pig());
+                        animal = (new Pig());
                     }
                     break;
 
@@ -63,14 +67,15 @@ namespace FermMad
                     if ((Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 3))) >= 0)
                     {
                         Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 3));
-                        _animals.Add(new Cow());
+                        animal = (new Cow());
                     }
                     break;
             }
+            return animal;
         }
 
 
-        private static Ferm ferm;
+        private static Ferm selectedFerm;
         private static Ferm SelectFerm(List<Ferm> ferms, int v)
         {
             switch (v)
@@ -80,7 +85,7 @@ namespace FermMad
                     {
                         if (item is ChickenFerm)
                         {
-                            ferm = item;
+                            selectedFerm = item;
                         }
                     }
                     break;
@@ -89,7 +94,7 @@ namespace FermMad
                     {
                         if (item is PigFerm)
                         {
-                            ferm = item;
+                            selectedFerm = item;
                         }
                     }
                     break;
@@ -98,12 +103,12 @@ namespace FermMad
                     {
                         if (item is CowFerm)
                         {
-                            ferm = item;
+                            selectedFerm = item;
                         }
                     }
                     break;
             }
-            return ferm;
+            return selectedFerm;
         }
 
         private static int CheckMoneyBuyAnimal(Ferm ferm)
