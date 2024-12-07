@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FermMad
 {
-    public class ViewModel : INotifyPropertyChanged
+    public class ViewModel : Form1, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         readonly Model1 Model;
@@ -52,6 +54,18 @@ namespace FermMad
             Animals = (from q in Model.Animals select q).ToList();
             Ferms = (from q in Model.Ferms select q).ToList();
             Player_Progress = (from q in Model.Player_Progress select q).ToList();
+
+            int index = 0;
+            foreach (var item in Player_Progress)
+            {
+                if (index==Player_Progress.Count)
+                {
+                    LabelMoney.Text = item.Money.ToString();
+                    LabelFood.Text = item.Corm.ToString();
+                    ProgressBarFood.Value = item.Corm;
+                }
+                index++;
+            }
         }
         public void Notify(string name)
         {

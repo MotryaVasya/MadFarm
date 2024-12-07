@@ -10,8 +10,8 @@ namespace FermMad
     public class Player
     {
         public static int Id {  get; set; }
-        public static int Money { get; set; }
-        public static int Corm {  get; set; }
-        public static int Min_Corm{ get; set; }
+        public static int Money { get; set; } = 100;
+        public static int Corm { get; set; } = 1000;
+        public static int Min_Corm { get; set; } 
     }
 }
