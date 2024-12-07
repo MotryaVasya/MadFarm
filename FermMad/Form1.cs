@@ -15,6 +15,7 @@ namespace FermMad
 
     public partial class Form1 : Form
     {
+        static FormShop formShop = new FormShop();
         public Form1()
         {
             InitializeComponent();
@@ -44,10 +45,13 @@ namespace FermMad
         {
 
         }
+        public static void CloseFormShop()
+        {
+            formShop.Close();
+        }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-           FormShop formShop = new FormShop();
+        {        
            formShop.ShowDialog();
         }
     }
