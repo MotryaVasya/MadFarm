@@ -74,6 +74,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShop.Designer.cs">
+      <DependentUpon>FormShop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202412051306166_Mig1.cs" />
     <Compile Include="Migrations\202412051306166_Mig1.Designer.cs">
       <DependentUpon>202412051306166_Mig1.cs</DependentUpon>
@@ -90,6 +96,9 @@
     <Compile Include="ViewModel.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShop.resx">
+      <DependentUpon>FormShop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412051306166_Mig1.resx">
       <DependentUpon>202412051306166_Mig1.cs</DependentUpon>
