@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -79,11 +80,15 @@ namespace FermMad
                     break;
                 #endregion
             }
+
+
             if (listBox2.Items.Count > 0)
             {
                 SetPositionForListBox2(listBox2);
                 Controls.Add(listBox2);
             }
+
+
             if (textBox1.Text.Length > 0)
             {
                 Controls.Add(textBox1);
@@ -100,5 +105,6 @@ namespace FermMad
         {
             CheckClickElementFromListBox(listBox1.SelectedItem.ToString());
         }
+
     }
 }
