@@ -16,25 +16,25 @@ namespace FermMad
             switch (index)
             {
                 case 1:
-                    if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
+                    if ((GetLastPlayerProgress().Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
-                        Player.Money -= CheckMoneyBuyFerm(_ferms);
+                        GetLastPlayerProgress().Money -= CheckMoneyBuyFerm(_ferms);
                         ferm = (new ChickenFerm(35, new List<Chicken>()));
                     }
                     break;
 
                 case 2:
-                    if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
+                    if ((GetLastPlayerProgress().Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
-                        Player.Money -= CheckMoneyBuyFerm(_ferms);
+                        GetLastPlayerProgress().Money -= CheckMoneyBuyFerm(_ferms);
                         ferm = (new PigFerm(35, new List<Pig>()));
                     }
                     break;
 
                 case 3:
-                    if ((Player.Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
+                    if ((GetLastPlayerProgress().Money -= CheckMoneyBuyFerm(_ferms)) >= CheckMoneyBuyFerm(_ferms))
                     {
-                        Player.Money -= CheckMoneyBuyFerm(_ferms);
+                        GetLastPlayerProgress().Money -= CheckMoneyBuyFerm(_ferms);
                         ferm = (new CowFerm(35, new List<Cow>()));
                     }
                     break;
@@ -48,25 +48,25 @@ namespace FermMad
             switch (index)
             {
                 case 1:
-                    if ((Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 1))) >= 0)
+                    if ((GetLastPlayerProgress().Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 1))) >= 0)
                     {
-                        Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 1));
+                        GetLastPlayerProgress().Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 1));
                         animal = (new Chicken());
                     }
                     break;
 
                 case 2:
-                    if ((Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 2))) >= 0)
+                    if ((GetLastPlayerProgress().Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 2))) >= 0)
                     {
-                        Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 2));
+                        GetLastPlayerProgress().Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 2));
                         animal = (new Pig());
                     }
                     break;
 
                 case 3:
-                    if ((Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 3))) >= 0)
+                    if ((GetLastPlayerProgress().Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 3))) >= 0)
                     {
-                        Player.Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 3));
+                        GetLastPlayerProgress().Money -= CheckMoneyBuyAnimal(SelectFerm(_ferms, 3));
                         animal = (new Cow());
                     }
                     break;

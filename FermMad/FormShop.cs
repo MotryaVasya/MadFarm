@@ -46,39 +46,6 @@ namespace FermMad
                     listBox2.Items.Add("Корм");
                     break;
                 #endregion
-
-                #region Фермы
-                case "Ферма коров":
-                    textBox1.Clear();
-                    //ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
-                    break;
-                case "Ферма свиней":
-                    textBox1.Clear();
-                    //ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
-                    break;
-                case "Ферма куриц":
-                    textBox1.Clear();
-                    //ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
-                    break;
-                #endregion
-                
-                #region Животные
-                case "Курицы":
-                    //ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
-                    break;
-                case "Свиньи":
-                    //ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
-                    break;
-                case "Коровы":
-                    //ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
-                    break;
-                #endregion
-                
-                #region Корм
-                case "Корм":
-                    //ViewModel.BuyCorm.ToString(BuyElementsShop.BuyCorm(listBox2.SelectedIndex));
-                    break;
-                #endregion
             }
 
 
@@ -123,14 +90,51 @@ namespace FermMad
         {
             string element =listBox2.SelectedItem.ToString();
             int count;
+            MessageBox.Show(element);
             if (int.TryParse(textBox1.Text, out count))
             {
                 MessageBox.Show($"Вы купили {count} {element}.");
+                switch (element)
+                {
+                    #region Фермы
+                    case "Ферма коров":
+                        textBox1.Clear();
+                        ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
+                        break;
+                    case "Ферма свиней":
+                        textBox1.Clear();
+                        ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
+                        break;
+                    case "Ферма куриц":
+                        textBox1.Clear();
+                        ViewModel._ferms.Add(BuyElementsShop.BuyFerm(listBox2.SelectedIndex++));
+                        break;
+                    #endregion
+
+                    #region Животные
+                    case "Курицы":
+                        ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
+                        break;
+                    case "Свиньи":
+                        ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
+                        break;
+                    case "Коровы":
+                        ViewModel._animals.Add(BuyElementsShop.BuyAnimal(listBox2.SelectedIndex++));
+                        break;
+                    #endregion
+
+                    #region Корм
+                    case "Корм":
+                        //ViewModel.BuyCorm.ToString(BuyElementsShop.BuyCorm(listBox2.SelectedIndex));
+                        break;
+                        #endregion
+                }
             }
             else
             {
                 MessageBox.Show("Ошибка!Введите корректное число.");
             }
+
 
         }
 

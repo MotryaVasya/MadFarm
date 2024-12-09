@@ -9,9 +9,9 @@ namespace FermMad
 {
     public class Player
     {
-        public static int Id {  get; set; }
-        public static int Money { get; set; }
-        public static int Corm {  get; set; }
-        public static int Min_Corm{ get; set; }
+        public int Id {  get; set; }
+        public int Money { get; set; }
+        public int Corm {  get; set; }
+        public int Min_Corm{ get; set; }
     }
 }

@@ -57,6 +57,10 @@ namespace FermMad
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+        public static Player GetLastPlayerProgress()
+        {
+            return _player_Progress.Last();
+        }
         public static ButtonCommands BuyFerm
         {
             get
