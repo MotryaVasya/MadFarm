@@ -87,12 +87,23 @@ namespace FermMad
                 SetPositionForListBox2(listBox2);
                 Controls.Add(listBox2);
             }
+            SetPositionForTextBox1(textBox1);
+            Controls.Add(textBox1);
+
+        }
+
+        private void SetPositionForTextBox1(TextBox textBox1)
+        {
+            textBox1.Left = listBox2.Right + 1;
+            textBox1.Top = listBox2.Top;
+
 
 
             if (textBox1.Text.Length > 0)
             {
                 Controls.Add(textBox1);
             }
+
         }
 
         private void SetPositionForListBox2(ListBox listBox2)
@@ -100,10 +111,32 @@ namespace FermMad
             listBox2.Left = listBox1.Right + 1;
             listBox2.Top = listBox1.Top;
         }
+        
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckClickElementFromListBox(listBox1.SelectedItem.ToString());
+        }
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string element =listBox2.SelectedItem.ToString();
+            int count;
+            if (int.TryParse(textBox1.Text, out count))
+            {
+                MessageBox.Show($"Вы купили {count} {element}.");
+            }
+            else
+            {
+                MessageBox.Show("Ошибка!Введите корректное число.");
+            }
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1.CloseFormShop();
         }
 
     }
